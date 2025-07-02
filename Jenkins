@@ -1,19 +1,18 @@
 pipeline{
     agent any
-    stages {
-        stage ('Building github code') {
+    stages{
+        stage ('build')
+        {
             steps {
-                echo "github through pipeline"
-                sh "hostname -i"
+                echo "coming from the github"
             }
         }
-        stage ('otherbuild in git'){
-            agent {
-                label 'jenkins-slave1'
-            }
-            steps {
-                echo "Building github code in slave"
-                sh "hostname -i"
+        stage ('groovystage'){
+            steps{
+                script {
+                  def couse = "k8s"  
+                  println("Thanks for enrolling to ${course} course")
+                }
             }
         }
     }
