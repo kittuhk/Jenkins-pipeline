@@ -1,17 +1,23 @@
-pipeline{
+pipeline {
     agent any
+    tools{
+        maven 'Maven'
+    }
     stages{
-        stage ('build'){
-            steps {
-                echo "coming from the github"
+        stage ('Build'){
+            steps{
+                 echo "print mvn version"
+                 sh "mvn --version"
+            }   
+        }
+        stage ("Sonar"){
+            steps{
+                echo "print sonar"
             }
         }
-        stage ('groovystage'){
+        stage ('Docker'){
             steps{
-                script {
-                  def course = "k8s"  
-                  println("Thanks for enrolling to ${course} course")
-                }
+                echo "print Docker"
             }
         }
     }
