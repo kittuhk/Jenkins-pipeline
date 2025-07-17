@@ -1,13 +1,16 @@
 pipeline {
     agent any 
-    stages {
-        stage ("Build") {
-            steps {
-                retry(3){
-                    echo "print jenkins pipeline"
-                    error "This will give some error"
+    stages{
+        stage("Build"){
+            steps{
+                script{
+                    def course = "k8s"
+                    if ("course == k8s") 
+                     println ("Thanks for enrolling course")
+                     else 
+                     println ("Do enroll")
+                    
                 }
-                echo "retrying multiple times"
             }
         }
     }
