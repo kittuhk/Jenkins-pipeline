@@ -5,7 +5,7 @@ pipeline {
             steps{
                 script{
                     def course = "k8s"
-                    if ("course == k8s") 
+                    if ("course == docker") 
                      println ("Thanks for enrolling course")
                      else 
                      println ("Do enroll")
