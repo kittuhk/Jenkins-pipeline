@@ -16,5 +16,10 @@ pipeline {
                 echo "build docker image"
             }
         }
+        stage("deploy"){
+            steps{
+                echo "deploying "
+            }
+        }
     }
 }
