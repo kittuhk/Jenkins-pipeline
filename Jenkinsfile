@@ -1,16 +1,13 @@
 pipeline {
-    agent any 
-    stages{
-        stage("Build"){
+    agent{
+        label "jenkins-slave1"
+    }
+    stages {
+        stage ("Build") {
             steps{
-                script{
-                    def course = "k8s"
-                    if ("course == docker") 
-                     println ("Thanks for enrolling course")
-                     else 
-                     println ("Do enroll")
-                    
-                }
+                timeout (time:5, unit:'SECONDS')
+                echo "printing timeout pipeline"
+                sleep 60
             }
         }
     }
